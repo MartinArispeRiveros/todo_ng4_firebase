@@ -1,3 +1,13 @@
-<p>
-  activity works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <form #activityForm="ngForm" (ngSubmit)="onSubmit(activityForm)">
+    <label>Actividad: </label>
+    <input name="activity" #name=ngModel [(ngModel)]="activityService.selectedActivity.activity" placeholder="Descripción">
+    <label>Fecha de creacion: </label>
+    <input type="date" name="dateCreate" #name=ngModel [(ngModel)]="activityService.selectedActivity.dateCreate">
+    <label>Fecha limite: </label>
+    <input type="date" name="dateToDo" #name=ngModel [(ngModel)]="activityService.selectedActivity.dateToDo">
+    <button type="submit">Registrar actividad</button>
+  </form>
+</body>
