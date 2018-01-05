@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FormsModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
