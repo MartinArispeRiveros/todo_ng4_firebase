@@ -1,0 +1,73 @@
+.Error{
+    color: red;
+}
+#labelActivity{
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    font-size: 150%;
+}
+#activityInput{
+    display: block;
+    width: 100%;
+    margin-bottom: 2px;
+}
+.red-border-class{
+    border-color: red;
+}
+#labelDateCreate{
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    font-size: 150%;
+}
+#dateCreateInput{
+    display: block;
+    width: 100%;
+    margin-bottom: 2px;
+}
+#labelDateToDo{
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    font-size: 150%;
+}
+#dateToDoInput{
+    display: block;
+    width: 100%;
+    margin-bottom: 4px;
+
+}
+.Buttons{
+    border-radius: 10px; 
+    font-size: 120%; 
+    background-color: lightgray;
+    border-color: gray;
+    box-shadow: 3px 3px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+    
+}
+.wrapper {
+    text-align: center;
+}
+.Buttons:hover{
+    background-color: lightblue;
+    color: white;
+    border-color: black;
+}
+.disable-class{
+    border-radius: 10px; 
+    font-size: 120%; 
+    background-color: lightgray;
+    border-color: gray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+.disable-class:hover{
+    background-color: lightgray;
+    border-color: gray;
+    color: grey;
+}

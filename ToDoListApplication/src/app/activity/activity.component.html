@@ -1,3 +1,34 @@
-<p>
-  activity works!
-</p>
+<!DOCTYPE html>
+<html lang="es">
+<body>
+  <form #activityForm="ngForm" (ngSubmit)="onSubmit(activityForm)" id="actForm" novalidate>  
+    <label id="labelActivity">Descripción de la actividad: </label>
+    <input type="text" [ngClass]="{'red-border-class': ((activityField.touched && !activityField.dirty) || (activityField.dirty && activityField.touched)) && activityField.invalid}" name="activity" id="activityInput" #activityField="ngModel" required minlength="4" maxlength="50"  [(ngModel)] = "activityService.selectedActivity.activity" placeholder="Descripción">
+    <div *ngIf="activityField.errors"  class="Error">
+      <div *ngIf="activityField.dirty && activityField.touched">
+        <div *ngIf="activityField.invalid">Descripción muy corta</div>
+      </div>
+      <div *ngIf="activityField.touched && !activityField.dirty">
+        <div *ngIf="activityField.invalid">Llene este espacio</div>
+      </div>
+    </div>
+    <label id="labelDateCreate">Fecha de inicio: </label>
+    <input type="date" [ngClass]="{'red-border-class': dateCreateField.touched && !dateCreateField.dirty && dateCreateField.invalid}" name="dateCreate" id="dateCreateInput" #dateCreateField="ngModel" [(ngModel)] = "activityService.selectedActivity.dateCreate"  required>
+    <div *ngIf="dateCreateField.errors" class="Error">
+      <div *ngIf="dateCreateField.touched && !dateCreateField.dirty">
+          <div *ngIf="dateCreateField.invalid">Llene este espacio</div>
+      </div>
+    </div> 
+    <label id="labelDateToDo">Fecha de finalización: </label>
+    <input type="date" [ngClass]="{'red-border-class': dateToDoField.touched && !dateToDoField.dirty && dateToDoField.invalid}" name="dateToDo" id="dateToDoInput" #dateToDoField="ngModel" [(ngModel)] = "activityService.selectedActivity.dateToDo" required>
+    <div *ngIf="dateToDoField.errors" class="Error">
+      <div *ngIf="dateToDoField.touched && !dateToDoField.dirty">
+          <div *ngIf="dateToDoField.invalid">Llene este espacio</div>
+      </div>
+    </div> 
+    <div class="wrapper">
+      <button [disabled]="activityForm.invalid"  [ngClass]="{'disable-class': activityForm.invalid}" class="Buttons">Registrar actividad</button>
+    </div>
+  </form>
+</body>
+</html>
