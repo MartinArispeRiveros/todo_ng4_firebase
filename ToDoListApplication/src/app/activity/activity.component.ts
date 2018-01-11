@@ -16,20 +16,11 @@ export class ActivityComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     this.activityService.insertActivity(form.value);
-    form.resetForm();
+    this.resetActivityForm(form);
   }
 
-  resetForm(form: NgForm) {
-    if (form != null) {
-      form.reset();
-      this.activityService.selectedActivity = {
-        $key: null,
-        active: false,
-        activity: null,
-        dateCreate: null,
-        dateToDo: null
-      };
-    }
+  resetActivityForm(form: NgForm) {
+    form.resetForm();
   }
 
 }
